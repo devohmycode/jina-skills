@@ -717,7 +717,9 @@ def cmd_install(a):
     else:
         sh = f'#!/bin/sh\nexec python3 "{script}" "$@"\n'
     launcher = target / "jina-api"
-    launcher.write_text(sh, encoding="utf-8", newline="\n")
+    # Path.write_text(newline=...) needs Python 3.10; a shell script must keep LF.
+    with open(launcher, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(sh)
     launcher.chmod(0o755)
     written.insert(0, launcher)
     for w in written:
