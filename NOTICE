@@ -1,0 +1,9 @@
+jina-skills
+Copyright 2026 DevOhMyCode
+
+This product includes software derived from jina-ai/MCP
+(https://github.com/jina-ai/MCP), Copyright Jina AI, licensed under the
+Apache License, Version 2.0: the endpoints, request shapes, default models
+and the facility-location selection used by `dedupe` follow that server.
+
+Not affiliated with or endorsed by Jina AI.
